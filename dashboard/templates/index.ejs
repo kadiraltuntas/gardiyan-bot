@@ -1,0 +1,17 @@
+<%- include('blocks/siderbar', {bot, user, path}) %>
+<%- include('blocks/header', {bot, user, path}) %>
+
+
+
+
+
+<center>
+  <div class="jumbotron">
+    <div>
+      <h1><%= bot.user.username %> Kontrol Paneli</h1>
+      <h4><% if(bot.appInfo.description.length > 3) { %> <%= bot.appInfo.description %> <% } else { %>Türkiyenin En Kaliteli Botu.<% }%></h4>
+      <p><a class="btn btn-primary" href="/commands" role="button">Komutlar »</a></p>
+    </div>
+  </div>
+ </center>
+<% include ./blocks/footer %>

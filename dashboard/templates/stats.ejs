@@ -1,0 +1,48 @@
+<%- include('blocks/siderbar', {bot, user, path}) %>
+<%- include('blocks/header', {bot, user, path}) %>
+<div class="jumbotron">
+    <center>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-10"><h3>Bot İstatistikleri</h3>
+        </div>
+      </div>
+	  </center>
+	  <br><br>
+      <div class="row justify-content-md-center">
+        <div class="col-5 text-nowrap"><i class="fa fa-fw fa-server" aria-hidden="true"></i> Sunucular:</div>
+        <div class="col-5 text-nowrap"><strong><%= stats.servers %> </strong></div>
+      </div>
+	  <br>
+      <div class="row justify-content-md-center">
+        <div class="col-5 text-nowrap"><i class="fa fa-fw fa-users" aria-hidden="true"></i> Üyeler:</div>
+        <div class="col-5 text-nowrap"><strong><%= stats.members %> </strong></div>
+      </div>
+	  <br>
+      <div class="row justify-content-md-center">
+        <div class="col-5 text-nowrap"><i class="fa fa-fw fa-tasks" aria-hidden="true"></i> Ram Kullanımı:</div>
+        <div class="col-5 text-nowrap"><strong><%= stats.memoryUsage %> / 80128 MB</strong></div>
+      </div>
+	  <br>
+      <div class="row justify-content-md-center">
+        <div class="col-5 text-nowrap"><i class="fa fa-fw fa-hashtag" aria-hidden="true"></i> Yazı Kanalları:</div>
+        <div class="col-5 text-nowrap"><strong><%= stats.text %></strong></div>
+      </div>
+	  <br>
+      <div class="row justify-content-md-center">
+        <div class="col-5 text-nowrap"><i class="fa fa-fw fa-microphone" aria-hidden="true"></i> Ses Kanalları:</div>
+        <div class="col-5 text-nowrap"><strong><%= stats.voice %></strong></div>
+      </div>
+	  <br>
+      <div class="row justify-content-md-center">
+        <div class="col-5 text-nowrap"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Discord.js Versiyonu:</div>
+        <div class="col-5 text-nowrap"><strong><%= stats.dVersion %></strong></div>
+      </div>
+	  <br>
+      <div class="row justify-content-md-center">
+        <div class="col-5 text-nowrap"><i class="fa fa-fw fa-cog" aria-hidden="true"></i> Node.js Versiyonu:</div>
+        <div class="col-5 text-nowrap"><strong><%= stats.nVersion %></strong></div>
+      </div>
+  </div>
+  </div>
+  <% include ./blocks/footer %>

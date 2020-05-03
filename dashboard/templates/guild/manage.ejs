@@ -1,0 +1,79 @@
+<%- include('../blocks/siderbar', {bot, user, path}) %>
+<%- include('../blocks/header', {bot, user, path}) %>
+<div class="jumbotron">
+<h2>Sunucuyu Yönet</h2>  
+<div class="row">
+  <div class="col col-4">
+    <%- include('../blocks/guild-card', {guild}) %>
+  </div>
+  <div class="col">
+    <form method="post">
+      
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="width: 50%; margin: 0 !important;">
+            <div class="input-group-addon" style=" width: 150px; text-align: left; margin: 0; color:#2b2626">Prefix</div>
+            <input  type="text" class="form-control" style="text-align: left;" name="prefix" id="prefix" placeholder="Örnek : -">
+        </div>
+		<br>
+      
+      <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="width: 50%; margin: 0 !important;">
+            <div class="input-group-addon" style="width: 150px; text-align: left; margin: 0; color:#2b2626">Sayaç</div>
+            <input type="text" class="form-control" style="text-align: left;" name="sayac" id="sayac" placeholder="Örnek : 50">
+        </div>
+		<br>
+      
+      <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="width: 50%; margin: 0 !important;">
+            <div class="input-group-addon" style="width: 150px; text-align: left; margin: 0; color:#2b2626">Sa-As Ayarla</div>
+            <input type="text" class="form-control" style="text-align: left;" name="saas" id="saas" placeholder="Örnek : acik-kapali">
+        </div>
+		<br>
+      
+      
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="width: 50%; margin: 0 !important;">
+            <div class="input-group-addon" style="width: 150px; text-align: left; margin: 0; color:#2b2626">Giriş Mesaj</div>
+            <input type="text" class="form-control" style="text-align: left;" name="gmesaj" id="gmesaj" placeholder="Örnek : {kullanıcı} Hey {sunucu} Adlı Sunucumuza Hoşgeldin!">
+        </div>
+      <br>
+      <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="width: 50%; margin: 0 !important;">
+            <div class="input-group-addon" style="width: 150px; text-align: left; margin: 0; color:#2b2626">Çıkış Mesaj</div>
+            <input type="text" class="form-control" style="text-align: left;" name="cmesaj" id="cmesaj" placeholder="Örnek : {kullanıcı} Aaa {sunucu} Adlı Sunucumuzdan Ayrıldı!">
+        </div>
+		<br>
+      
+      <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="margin: 0 !important;">
+            <div  class="input-group-addon" style="width: 151px; text-align: left; margin: 0; color:#2b2626">Giriş-Çıkış Kanal</div>
+            <select style="width: 54%" class="kanal" id="girisk" name="girisk">
+              <option disabled selected> Bir kanal seçmelisin. </option>
+              <% const kanallar = guild.channels %>
+              <% kanallar.map(item=> { %>
+              <% if (item.type == 'voice' || item.type == 'category') return;%>
+              <option value="<%=item.id%>" id="<%= item.id%>"> <%= item.name %> </option>
+              <% }) %>
+            </select>
+        </div>
+		<br>
+        
+      <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="margin: 0 !important;">
+            <div class="input-group-addon" style="width: 151px; text-align: left; margin: 0; color:#2b2626">Otorol</div>
+            <select style="width: 54%" class="kanal" id="otorol" name="otorol">
+              <option disabled selected> Bir rol seçmelisin. </option>
+              <% const roller = guild.roles %>
+              <% roller.map(item=> { %>
+              <% if (item.name == '@everyone') return;%>
+              <option value="<%=item.id%>" id="<%= item.id%>"> <%= item.name %> </option>
+              <% }) %>
+            </select>
+        </div>
+      <br>
+        
+               
+      </ul>
+      <div style=" width: 100%; text-align: right; margin-top: 20px;">
+       <center> <a style="color:#ffffff" class="btn btn-danger" data-toggle="modal" data-target="#settingsResetModal" role="button">Ayarları Sıfırla <i class="fa fa-fw fa-cogs" aria-hidden="true"></i></a> </center><br>
+        <center><button type="submit" class="btn btn-primary">Değişiklikleri Kaydet <i class="fa fa-fw fa-save" aria-hidden="true"></i></button></center>
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
+<% include ../blocks/guild-modals %>
+<% include ../blocks/footer %>
