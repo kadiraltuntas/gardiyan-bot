@@ -51,7 +51,7 @@
     "builtin-modules": "^3.1.0",
     "postcss-modules": "^1.4.1",
     "promisify": "^0.0.3",
-    "ejs": "^2.6.2",
+    "ejs": "^3.1.7",
     "passport": "^0.4.0",
     "express-session": "^1.16.1",
     "memorystore": "^1.6.1",
