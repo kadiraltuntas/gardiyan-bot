@@ -49,7 +49,7 @@
     "google-tts-api": "^0.0.4",
     "modules": "^0.4.0",
     "builtin-modules": "^3.1.0",
-    "postcss-modules": "^1.4.1",
+    "postcss-modules": "^6.0.0",
     "promisify": "^0.0.3",
     "ejs": "^2.6.2",
     "passport": "^0.4.0",
