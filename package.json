@@ -38,7 +38,7 @@
     "xmlhttprequest": "^1.8.0",
     "ytdl-core": "^0.29.2",
     "quick.db": "^6.3.2",
-    "moment-timezone": "^0.5.25",
+    "moment-timezone": "^0.5.35",
     "cleverbot.io": "^1.0.4",
     "opusscript": "^0.0.6",
     "figlet": "^1.2.2",
